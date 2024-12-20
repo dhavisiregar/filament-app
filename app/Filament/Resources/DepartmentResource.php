@@ -48,7 +48,7 @@ class DepartmentResource extends Resource
                 Forms\Components\Section::make('Department Details')
                     ->schema([
                         Forms\Components\TextInput::make('name')
-                            ->required()
+                            ->required(),
                     ]),
             ]);
     }
@@ -75,6 +75,7 @@ class DepartmentResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

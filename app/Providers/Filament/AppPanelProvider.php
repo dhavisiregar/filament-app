@@ -33,6 +33,7 @@ class AppPanelProvider extends PanelProvider
             ->login()
             ->registration()
             ->profile()
+            ->brandLogo(asset('images/logo.png'))
             ->userMenuItems([
                 MenuItem::make()
                     ->label('Admin')
@@ -41,12 +42,12 @@ class AppPanelProvider extends PanelProvider
                     ->visible(fn(): bool => auth()->user()->is_admin)
             ])
             ->colors([
-                'danger' => Color::Red,
+                'danger' => '#ff0000',
                 'gray' => Color::Slate,
                 'info' => Color::Blue,
                 'success' => Color::Emerald,
                 'warning' => Color::Orange,
-                'primary' => Color::Amber,
+                'primary' => Color::Indigo,
             ])
             ->discoverResources(in: app_path('Filament/App/Resources'), for: 'App\\Filament\\App\\Resources')
             ->discoverPages(in: app_path('Filament/App/Pages'), for: 'App\\Filament\\App\\Pages')

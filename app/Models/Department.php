@@ -11,7 +11,19 @@ class Department extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['team_id', 'name'];
+    protected $fillable = ['name', 'team_id'];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($department) {
+            if (empty($department->team_id)) {
+            $department->team_id = auth()->user()->team_id ?? 1;
+            }
+        });
+    }
+
 
     public function employees(): HasMany
     {

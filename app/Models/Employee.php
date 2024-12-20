@@ -12,6 +12,17 @@ class Employee extends Model
 
     protected $guarded = [];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($department) {
+            if (empty($department->team_id)) {
+            $department->team_id = auth()->user()->team_id ?? 1;
+            }
+        });
+    }
+
     public function department(): BelongsTo
     {
         return $this->belongsTo(Department::class);

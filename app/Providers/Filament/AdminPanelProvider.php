@@ -27,8 +27,9 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             ->id('admin')
             ->path('admin')
+            ->brandLogo(asset('images/logo.png'))
             ->colors([
-                'danger' => Color::Red,
+                'danger' => '#ff0000',
                 'gray' => Color::Slate,
                 'info' => Color::Blue,
                 'primary' => Color::Indigo,
