@@ -11,7 +11,7 @@ class Department extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'team_id'];
+    protected $fillable = ['name'];
 
     protected static function boot()
     {
