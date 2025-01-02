@@ -28,7 +28,7 @@ class AppPanelProvider extends PanelProvider
     {
         return $panel
             ->default()
-            ->sidebarCollapsibleOnDesktop()
+            ->sidebarCollapsibleOnDesktop(true)
             ->id('app')
             ->path('app')
             ->login()
