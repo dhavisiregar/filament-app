@@ -26,6 +26,7 @@ class AdminPanelProvider extends PanelProvider
     {
         return $panel
             ->id('admin')
+            ->sidebarCollapsibleOnDesktop()
             ->path('admin')
             ->brandLogo(asset('images/logo.png'))
             ->colors([
