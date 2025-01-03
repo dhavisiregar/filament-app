@@ -38,7 +38,7 @@ class DepartmentResource extends Resource
 
     public static function getNavigationBadgeColor(): string|array|null
     {
-        return static::getModel()::count() > 10 ? 'warning' : 'success';
+        return static::getModel()::count() > 20 ? 'warning' : 'success';
     }
 
     public static function form(Form $form): Form
